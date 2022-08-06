@@ -1,0 +1,21 @@
+:root{
+    --color-whiteC: #fff;
+    --color-whiteS: #474747;
+    --color-black: #222;
+    --color-gray: #b3b2b2;
+    --color-green: #11ab7c;
+    --color-greenH: #0d8c65;
+} 
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    min-width: 100%;
+    min-height: 100vh;
+    background-color: var(--color-green);
+    transition: all .5s;
+}

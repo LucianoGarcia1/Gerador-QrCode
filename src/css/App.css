@@ -1,0 +1,219 @@
+@import './index.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.App{
+    min-width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+
+.App .Content{
+    width: 50%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-whiteC);
+    -webkit-box-shadow: 5px 0px 5px 2px rgba(33,33,33,0.6); 
+    box-shadow: 5px 0px 5px 1px rgba(33,33,33,0.10);
+    transition:all .5s;
+}
+.App .Resposta{
+    width: 50%;
+    min-height: 400px;
+    background-color: var(--color-green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    transition:all .5s;
+}
+
+h1{
+    color: var(--color-green);
+    font-size: 3em;
+    font-weight: 900;
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.Content div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+label{
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--color-black);
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+input{
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid var(--color-gray);
+    color: var(--color-black);
+    transition: all .5s;
+}
+
+input[type="text"]{
+    padding-left: 30px;
+    outline: none;
+}
+input::placeholder{
+    color: var(--color-black);
+}
+
+input[type="color"]{
+    width: 40%;
+    background-color: var(--color-whiteC);
+    cursor: pointer;
+}
+
+button{
+    font-size: 1.1em;
+    font-weight: 500;
+    width: 60%;
+    height: 45px;
+    border-radius: 4px;
+    border: none;
+    background-color: var(--color-green);
+    color: var(--color-whiteC);
+    cursor: pointer;
+    transition: all .5s;
+}
+
+button:hover{
+    background-color: var(--color-greenH);
+}
+
+div.download-file{
+    color: var(--color-black);
+    width: 60%;
+    height: 250px;
+    background-color: var(--color-whiteC);
+    border-radius: 4px;
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    padding:0px 30px;
+}
+
+div.download-file.active{
+    display: flex;
+}
+
+div.download-file div{
+    width: 100%;
+    text-align: center;
+}
+
+h2{
+    font-size: 1.6em;
+    font-weight: 500;
+}
+
+div.download-file p{
+    color: var(--color-whiteS);
+    font-size: 1em;
+    font-weight: 500;
+}
+
+div.sucess{
+    display: none;
+    width: 60%;
+    padding: 20px;
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--color-whiteC);
+    background-color: var(--color-green);
+    border-radius: 4px;
+    animation: show .5s ease-in-out forwards;
+    transition: all .5s;
+}
+div.sucess.active{
+    display: flex;
+}
+
+
+img{
+    min-width: 60%;
+    height: 250px;
+    border-radius: 4px;
+}
+
+@keyframes show {
+    from{
+        transform: translate3d(-50px,50px,0);
+    }
+    to{
+        transform: translate3d(0,0,0);
+    }
+}
+
+@media screen and (max-width: 900px){
+    .App{
+        flex-direction: column;
+    }
+
+    .App .Content{
+        width: 100%;
+    }
+    .App .Resposta{
+        width: 100%;
+        min-height: 600px;
+    }
+
+    label{
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 600px){
+    label{
+        width: 80%;
+    }
+    button{
+        width: 80%;
+    }
+
+    img{
+        min-width: 65%;
+    }
+
+    h1{
+        font-size: 2.6em;
+    }
+    .App .Resposta{
+        display: none;
+    }
+
+    .App .Resposta.swapi{
+        display: flex;
+    }
+
+    div.sucess{
+        min-width: 70%;
+    }
+
+    div.download-file{
+        min-width: 65%;
+        padding: 0 10px;
+    }
+
+    div.download-file p{
+        font-size: 0.9em;
+    }    
+}
